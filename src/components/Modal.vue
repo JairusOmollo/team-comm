@@ -7,7 +7,7 @@
 
                 <header class="">
                     <div class="fixed top-100 right-400 w-2/4 bg-white shadow-md pb-3">
-                        <div class="grid  justify-items-end pt-3 pr-5">
+                        <div class="grid  justify-items-end pt-3 pr-5" v-on:click="closeModal" >
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" class="w-10 h-10 hover:bg-slate-200 rounded-full p-1">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -132,7 +132,13 @@
 
 
 export default {
+    methods: {
+        closeModal(){
+            this.$emit('clickedModal')
+            console.log('clicked modal in modal component')
 
+        }
+    }
 }
 </script>
 

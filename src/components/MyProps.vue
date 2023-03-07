@@ -19,7 +19,7 @@
             <div class="grid grid-cols-1  lg:grid-cols-3 p-4 "><!--cardholder-->
 
                 <div class="mx-4  p-4 shadow-lg object-contain bg-white"><!--card-->
-                    <h3 class="mb-2 text-2xl font-normal">ndurarua chairs</h3>
+                    <h3 class="mb-2 text-2xl font-normal">Ndurarua uniforms</h3>
                     <div class="h-24">
                         <p class="text-sm text-gray-600">Lorem, ipelit.
                             Recusandae nemo itaque nam at asperiores enim eum possimus quisquam commodi a.
@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <div class="mx-4 p-4 shadow-lg bg-white"><!--card-->
-                    <h3 class="mb-2 text-2xl font-normal">ndurarua chairs</h3>
+                    <h3 class="mb-2 text-2xl font-normal">Tap to eat request</h3>
                     <div class="h-24">
                         <p class="text-sm text-gray-600">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                             Recusandae nemo itaque nam at asperiores enim eum possimus quisquam commodi a.
@@ -85,7 +85,7 @@
                     </div>
                 </div>
                 <div class="mx-4 p-4 shadow-lg"><!--card-->
-                    <h3 class="mb-2 text-2xl font-normal">ndurarua chairs</h3>
+                    <h3 class="mb-2 text-2xl font-normal">Ruthimitu Desks</h3>
                     <div class="h-24">
                         <p class="text-sm text-gray-600">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                             Recusandae nemo itaque nam at asperiores enim eum possimus quisquam commodi a.

@@ -1,7 +1,7 @@
 <template>
     <div class="no-scrollbar">
         <div class=" h-full  ">
-            <div class=" bg-slate-50 pt-2 px-4 rounded-lg   "><!--main container-->
+            <div class=" bg-gray-50 pt-2 px-4 rounded-lg   "><!--main container-->
                <Nav></Nav>
                 <div class="grid grid-cols-4 h-screen">
                     <!--side-and-main-->
@@ -81,7 +81,7 @@ export default {
     methods: {
         showModal() {
             const mySideAndMainDiv = this.$el.querySelector('#sideAndMain')
-            mySideAndMainDiv.classList.remove("grid")
+            
 
             this.active = true
             this.loadModal = true

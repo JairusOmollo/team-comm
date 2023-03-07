@@ -1,53 +1,57 @@
-const { Sequelize, DataTypes, STRING, UUIDV4 } = require('sequelize');
+const { DataTypes, UUIDV4 } = require('sequelize');
 const bcrypt = require('bcrypt')
 const db = require('../config/database');
 
 
-const User = db.define('allUsers', {
-    user_id: {
-       type: DataTypes.INTEGER,
-       autoIncrement: true,
-        primaryKey: true,
-        
-    },
-
-    firstName: {
-        type: DataTypes.STRING,
-        allowNull: false
-        
-    },
-    lastName: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-            notNull: {
-                len:[2,30],
-                msg: 'Please enter your last name'
-            }
-        }
-
-    },
-    email: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-                notNull: {
-                    len:[5,30],
-                    msg: 'Please enter an email address'
-                }
-            }
-    },
-    password: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-            notNull: {
-                len: [5, 25],
-                msg: 'Minimum password is 6 characters'
-            }
-        }
-    }   
- });
+const User = db.define('newUsers', {
+    
+    id: {
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
+         primaryKey: true
+         
+     },
+ 
+     firstName: {
+         type: DataTypes.STRING,
+         allowNull: false,
+         defaultValue: null
+         
+     },
+     lastName: {
+         type: DataTypes.STRING,
+         allowNull: false,
+         validate: {
+             notNull: {
+                 len:[2,30],
+                 msg: 'Please enter your last name'
+             }
+         },
+         defaultValue: null
+ 
+     },
+     email: {
+         type: DataTypes.STRING,
+         allowNull: false,
+         validate: {
+                 notNull: {
+                     len:[5,30],
+                     msg: 'Please enter an email address'
+                 }
+             }
+     },
+     password: {
+         type: DataTypes.STRING,
+         allowNull: false,
+         validate: {
+             notNull: {
+                 len: [5, 25],
+                 msg: 'Minimum password is 6 characters'
+             }
+         }
+     }   
+  
+});
 
  User.beforeCreate(async (user) => {
 
@@ -60,6 +64,6 @@ const User = db.define('allUsers', {
 });
 
 
-db.sync()
+db.sync({force: true})
 
 module.exports = User;

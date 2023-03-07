@@ -87,17 +87,17 @@ export default {
             proposal: {
                 title: '',
                 nameOfInstitution: '',
-                details: '',
-                images: ''
+                details: ''
+                
             }
         }
     },
     methods: {
 
         async createProposal() {
-            console.log(this.proposal)
+      
             await axios.post('http://localhost:5000/create-proposal', JSON.stringify(this.proposal),{
-                headers: { 'content-type': 'application/x-www-form-urlencoded' }
+                headers: {'Content-Type': 'application/json'}
             })
                 .then(response => {
                     const data = response
@@ -107,7 +107,9 @@ export default {
                     }
 
                 })
-                .catch(err => console.log(err))
+                .catch(error => {
+                    console.log(error)
+                })
         },
     },
     computed: {

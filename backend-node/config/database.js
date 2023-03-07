@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const dotenv = require('dotenv');
 
-const now = dotenv.config()
+ dotenv.config()
 
 
 

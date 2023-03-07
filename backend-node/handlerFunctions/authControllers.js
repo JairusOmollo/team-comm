@@ -32,12 +32,10 @@ module.exports.signup_post = async (req, res) => {
         const user = await User.create({ firstName, lastName, email, password });
         const token = createToken(user.user_id)
         res.cookie('jwt', token);
-        res.status(200).json({
-            user: user.user_id
-        });
+        res.status(200).json({user: user});
     }
     catch (err) {
-        console.log(err.message)
+        throw new AuthError('not found')
     }
 }
 module.exports.login_post = async (req, res) => {

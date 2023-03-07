@@ -57,7 +57,8 @@ export default {
       await axios.post('http://localhost:5000/login', JSON.stringify(this.form),
         {
           headers: { 'Content-Type': 'application/json' },
-          withCredentials: true, credentials: 'include'
+          withCredentials: true, credentials: 'include',
+          'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS'
         })
         .then(response => {
 

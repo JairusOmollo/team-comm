@@ -1,20 +1,12 @@
-const Proposal = require('../models/proposal')
+const proposal = require('../models/proposal.js')
 
-module.exports.create_proposal_post = async (req, res)=> {
+module.exports.create_prop_post = async (req, res) => {
     try {
-        const { title , nameOfInstitution, details, images } = req.body;
-        
-        const newProposal = await Proposal.create({ title, nameOfInstitution, details, images});
+        const { title, nameOfInstitution, details } = req.body
 
-        if (newProposal) {
-           res.json({proposal: newProposal.id});
-        } else {
-            res.send('post not created')
-        }
+        const newProposal = await proposal.create({ title, nameOfInstitution, details })
+       await  res.json(newProposal)
     } catch (error) {
-        throw new Error('no post made')
+       res.send(error)
     }
-
-    
-
 }

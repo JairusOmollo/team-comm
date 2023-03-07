@@ -62,10 +62,10 @@ export default {
   },
   methods: {
     async submitForm() {
+    try {
       await axios.post('http://localhost:5000/signup', JSON.stringify(this.form),
         {
-          headers: {'Content-Type': 'application/json'},
-          withCredentials: true, credentials: 'include'
+          headers: {'Content-Type': 'application/json'}
         })
         .then(response => {
           const data = response
@@ -76,6 +76,9 @@ export default {
           
         })
         .catch(err => console.log(err))
+    } catch (error) {
+      console.log(error)
+    }
     },
 
     linkText(){
