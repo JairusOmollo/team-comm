@@ -10,7 +10,7 @@
         <div class="px-12">
             <h3 class="text-3xl font-medium">Create new proposal</h3>
         </div>
-        <div class="text-slate-500 mt-5 mb-10 px-14 font-thin">
+        <div class=" mt-5 mb-10 px-14 ">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis officiis debitis eius quis explicabo.
             Quibusdam totam quam dolorem esse ipsa.
         </div>
@@ -19,29 +19,29 @@
             <form class="" @submit.prevent="createProposal">
                 <label class=" flex space-x-4">
                     <span class="bg-slate-300 rounded-full w-8 p-1 text-center text-white">1</span>
-                    <p class="text-lg font-thin text-slate-500">Proposal title</p>
+                    <p class="text-lg ">Proposal title</p>
                 </label>
                 <input type="text" v-model="proposal.title"
                     class="w-3/4 my-2 ml-12 mb-6 h-8 text-lg font-semibold rounded-md bg-inherit focus:outline-none border border-slate-300 hover:border-indigo-300 ">
                 <label class=" flex space-x-4">
                     <span class="bg-slate-300 rounded-full w-8 p-1 text-center text-white">2</span>
-                    <p class="text-base font-thin">Name of your institution</p>
+                    <p class="text-lg">Name of your institution</p>
                 </label>
-                <input type="text" v-model="proposal.nameOfInstitution"
+                <input type="text uppercase" v-model="proposal.nameOfInstitution"
                     class="w-3/4 my-2 ml-12 mb-6 h-8 text-lg font-semibold rounded-md bg-inherit focus:outline-none border border-slate-300 hover:border-indigo-300 ">
 
                 <label class=" flex space-x-4">
                     <span class="bg-slate-300 rounded-full w-8 p-1 text-center text-white">3</span>
-                    <p class="text-base font-thin ">Here is space for your proposal details</p>
+                    <p class="text-lg ">Here is space for your proposal details</p>
                 </label>
                 <textarea v-model="proposal.details"
-                    class=" my-2 w-3/4 ml-12 mb-6 h-32 text-lg font-current rounded-md bg-inherit focus:outline-none border border-slate-300 hover:border-indigo-300 "
+                    class=" my-2 w-3/4 ml-12 mb-6 h-64 p-5 text-lg font-current rounded-md bg-inherit focus:outline-none border border-slate-300 hover:border-indigo-300 "
                     rows="10">
 
                         </textarea>
                 <label class=" flex space-x-4">
                     <span class="bg-slate-300 rounded-full w-8 p-1 text-center text-white">4</span>
-                    <p class="text-base font-thin">Upload pictures to show status of the current situation</p>
+                    <p class="text-lg">Upload pictures to show status of the current situation</p>
                 </label>
                 <div class="mb-20">
                     <label
@@ -88,6 +88,7 @@ export default {
                 title: '',
                 nameOfInstitution: '',
                 details: ''
+                
                 
             }
         }

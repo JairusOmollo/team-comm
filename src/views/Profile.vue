@@ -64,7 +64,7 @@
                                 </div>
                                 <div>
                                     <label for="" class=" text-base ">Ward</label>
-                                    <select name="" id=""
+                                    <select name="" id="" 
                                         class=" hover:border-sky-300 focus:border-sky-200 focus:outline-none hover:cursor-pointer border-2 p-3 block rounded-lg mt-1 w-64">
                                         <option value="rrrr">Select your ward</option>
                                         <option value="rrrr">Ruthimitu</option>

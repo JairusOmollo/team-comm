@@ -48,7 +48,7 @@ module.exports.login_post = async (req, res) => {
             if (auth) {
                 const token = createToken(user._id);
                 res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
-                res.json({user: user.user_id})
+                await res.json({user: user.id})
 
             } else{
                 throw new AuthError('that email is not registered', 500)

@@ -1,16 +1,20 @@
 <template>
     <div class="no-scrollbar">
         <div class=" h-full  ">
-            <div class=" bg-gray-50 pt-2 px-4 rounded-lg   "><!--main container-->
-               <Nav></Nav>
+            <div class=" bg-gray-50  px-4 rounded-lg   "><!--main container-->
+               
                 <div class="grid grid-cols-4 h-screen">
                     <!--side-and-main-->
-                    <aside class="border-r-2"><!--sidebar-->
+                    <aside class="border-r-2 bg-black text-white p-4"><!--sidebar-->
+                        <div><!--logo-->
+                        <h2 class="ml-2 text-lg font-xs ">Dagoretti South <span class="font-light"> <span class="text-sky-500 font-bold text-2xl">|</span> Portal</span>
+                        </h2>
+                    </div>
                         <div><!--sidebar maincontainer-->
                             <RouterLink to="/userdashboard/create-proposal">
                                 <div @click="showModal" class="mt-20" ><!--button div-->
                                 <button 
-                                    class="flex border-2 rounded-lg bg-sky-500  justify-center text-white p-3 space-x-3 hover:bg-opacity-75">
+                                    class="flex  rounded-lg bg-white  justify-center text-black p-3 space-x-3 hover:bg-opacity-75">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor "
                                         class="w-6 h-6">
                                         <path
@@ -21,9 +25,9 @@
                             </div>
                             </RouterLink>
                             
-                            <div class="mt-12"><!--other tasks-->
+                            <div class="mt-12 "><!--other tasks-->
                                 <RouterLink to="/userdashboard/my-proposals"
-                                    class="text-base flex space-x-2  py-4 font-bold hover:opacity-75 hover:bg-slate-100 rounded-xl cursor-pointer">
+                                    class="text-base flex space-x-2  py-4 rounded-md font-bold focus:border-r-4 focus:border-r-20 focus:bg-gray-800 border-r-sky-400 cursor-pointer hover:bg-gray-700">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -33,7 +37,7 @@
                                 </RouterLink>
 
                                 <a
-                                    class="flex space-x-2  py-4 font-bold hover:opacity-75 hover:bg-slate-100 rounded-xl cursor-pointer">
+                                    class="text-base flex space-x-2  py-4 rounded-md font-bold focus:border-r-4 focus:border-r-20 focus:bg-gray-800 border-r-sky-400 cursor-pointer hover:bg-gray-700">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                         <path stroke-linecap="round" stroke-linejoin="round"

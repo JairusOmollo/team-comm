@@ -69,6 +69,8 @@ export default {
             this.active = true
           };
           if (res.data.user) {
+            console.log(res.data.id)
+            this.$router.params.userID = res.data.id
             this.$router.push('/userdashboard')
           }
 

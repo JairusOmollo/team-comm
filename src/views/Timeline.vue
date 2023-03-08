@@ -1,13 +1,13 @@
 <template>
   
-    <div class="bg-slate-50  ">
-        <div class="grid grid-cols-timeline  p-4 h-full relative"><!---main container-->
-            <div class="border-r-2"><!--left-->
+    <div class="">
+        <div class="grid grid-cols-timeline  h-full relative"><!---main container-->
+            <div class="border-r-2 bg-black min-h-screen text-gray-400 "><!--left-->
                 <div class="pt-5 pb-20"><!--logo-->
-                    <h2 class=" fixed text-lg font-xs ">Dagoretti South <span class="font-light"> | Portal</span>
+                    <h2 class=" fixed text-lg font-xs text-white px-5 ">Dagoretti South <span class="font-light"> | Portal</span>
                     </h2>
                 </div>
-                <div class="fixed"><!---left nav-->
+                <div class="fixed "><!---left nav-->
                     <nav>
                         <div class="flex p-4">
                             <div>
@@ -43,12 +43,12 @@
                                 </svg>
 
                             </div>
-                            <div class="px-2 text-lg ">Notification</div>
+                            <div class="px-2 text-lg ">Messages</div>
                         </div>
                     </nav>
                 </div>
             </div>
-            <div class="border-r-2 col-span-2"><!--right feed-->
+            <div class=" col-span-2"><!--right feed-->
                 <RouterView></RouterView>
             </div>
             <div class=""><!---begin of last div-->

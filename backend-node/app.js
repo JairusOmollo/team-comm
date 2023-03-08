@@ -17,7 +17,7 @@ db.authenticate()
 const app = express();
 
 //middleware
-app.use(cors({origin: true, withCredentials: true}))
+app.use(cors({origin: true, withCredentials: true, credentials: true}))
 app.use(cookieParser())
 app.use(express.json())
 
