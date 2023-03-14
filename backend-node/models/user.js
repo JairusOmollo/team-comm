@@ -64,6 +64,6 @@ const User = db.define('newUsers', {
 });
 
 
-db.sync({force: true})
+db.sync()
 
 module.exports = User;

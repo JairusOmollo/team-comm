@@ -5,13 +5,13 @@
         <h2 class="text-base font-medium ">Dagoretti South <span class="font-light"> | Portal</span></h2>
       </div>
 
-      <div class="grid justify-items-center mb-8">
-        <p v-show="active"> {{ error }}</p>
+      <div v-show="active" class="grid justify-items-center mb-8 text-sm text-pink-600 font-bold   " >
+        <p  > {{ error }}</p>
       </div>
       <form @submit.prevent="submitForm">
-        <div class=" relative">
+        <div class=" relative"  >
           <label class="absolute p-2 text-xs text-gray-500 mb-12">Email address</label>
-          <input type="email" class="peer required  form-input" autofocus v-model="form.email">
+          <input type="email" class="peer required  form-input" autofocus v-model="form.email" >
           <p class="mt-2 invisible peer-invalid:visible text-pink-600 text-sm">
             Please provide a valid email address. </p>
         </div>
@@ -40,14 +40,15 @@
 
 <script>
 import axios from 'axios'
+
 export default {
   data() {
     return {
       error: '',
-      active: true,
+      active: '',
       form: {
-        email: null,
-        password: null
+        email: '',
+        password: ''
       }
     }
   },
@@ -61,24 +62,36 @@ export default {
           'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS'
         })
         .then(response => {
-
-          const res = response
-          console.log(res)
-          if (res.data.error) {
-            this.error = res.data.error
+          if(response.data.error){
+            this.error = response.data.error
             this.active = true
-          };
-          if (res.data.user) {
-            console.log(res.data.id)
-            this.$router.params.userID = res.data.id
+            setTimeout(()=> {
+              this.active = false
+            }, 5000);
+          } else {
             this.$router.push('/userdashboard')
           }
 
         })
         .catch(err => this.error = err)
     }
-  }
+  },
+  clearErrors(){
+     this.error = ''
+   }
+    
+  
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style >
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+</style>

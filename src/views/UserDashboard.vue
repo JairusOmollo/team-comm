@@ -1,6 +1,7 @@
 <template>
     <div class="no-scrollbar">
         <div class=" h-full  ">
+
             <div class=" bg-gray-50  px-4 rounded-lg   "><!--main container-->
                
                 <div class="grid grid-cols-4 h-screen">
@@ -46,18 +47,21 @@
 
                                     <p class="text-base ">Progress reports</p>
                                 </a>
-                                <a
-                                    class="flex space-x-2 py-4 font-bold hover:opacity-75 hover:bg-slate-100 cursor-pointer rounded-xl">
+                                <RouterLink class="text-base flex space-x-2  py-4 rounded-md font-bold focus:border-r-4 focus:border-r-20 focus:bg-gray-800 border-r-sky-400 cursor-pointer hover:bg-gray-700" to="/profile">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                         <path stroke-linecap="round" stroke-linejoin="round"
                                             d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                                     </svg>
-                                    <p class="text-base ">Notifications</p>
-                                </a>
+                                    <p class="text-base ">Institution Profile</p>
+                                </RouterLink>
+                                    
+                               
+                              
                             </div>
                         </div>
                     </aside>
+                 
                     <main class="col-span-3 overflow-scroll ">
                         <RouterView></RouterView>
                     </main><!--main dashboard-->

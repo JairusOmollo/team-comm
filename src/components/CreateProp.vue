@@ -38,7 +38,7 @@
                     class=" my-2 w-3/4 ml-12 mb-6 h-64 p-5 text-lg font-current rounded-md bg-inherit focus:outline-none border border-slate-300 hover:border-indigo-300 "
                     rows="10">
 
-                        </textarea>
+                            </textarea>
                 <label class=" flex space-x-4">
                     <span class="bg-slate-300 rounded-full w-8 p-1 text-center text-white">4</span>
                     <p class="text-lg">Upload pictures to show status of the current situation</p>
@@ -88,17 +88,19 @@ export default {
                 title: '',
                 nameOfInstitution: '',
                 details: ''
-                
-                
+
+
             }
         }
     },
     methods: {
 
         async createProposal() {
-      
-            await axios.post('http://localhost:5000/create-proposal', JSON.stringify(this.proposal),{
-                headers: {'Content-Type': 'application/json'}
+
+            await axios.post('http://localhost:5000/create-proposal', JSON.stringify(this.proposal), {
+                headers: { 'Content-Type': 'application/json'},
+                withCredentials: true // ensure that cookie is sent to backend
+                
             })
                 .then(response => {
                     const data = response

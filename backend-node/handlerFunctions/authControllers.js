@@ -7,9 +7,7 @@ const bcrypt = require('bcrypt');
 //create json web token
 const maxAge = 3 * 24 * 60 * 60;
 const createToken = (id) => {
-    return jwt.sign({ id }, 'jairus secret', {
-        expiresIn: maxAge
-    });
+    return jwt.sign({ id }, 'jairus secret');
 };
 
 //custom error
@@ -30,7 +28,7 @@ module.exports.signup_post = async (req, res) => {
     const { firstName, lastName, email, password } = req.body;
     try {
         const user = await User.create({ firstName, lastName, email, password });
-        const token = createToken(user.user_id)
+        const token = createToken(user.id)
         res.cookie('jwt', token);
         res.status(200).json({user: user});
     }
@@ -40,21 +38,23 @@ module.exports.signup_post = async (req, res) => {
 }
 module.exports.login_post = async (req, res) => {
     const { email, password } = req.body;
+   
     try {
         const user = await User.findOne({ where: { email: email } })
         if (user) {
             const auth = await bcrypt.compare(password, user.password);
 
             if (auth) {
-                const token = createToken(user._id);
-                res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
-                await res.json({user: user.id})
+                const token = createToken(user.id);
+                console.log(token,'---------------login req.body------------')
+                await res.cookie('jwt', token);
+                await res.json(user)
 
             } else{
-                throw new AuthError('that email is not registered', 500)
+                throw new AuthError('Incorrect password. Try again')
             }
         } else {
-          throw new AuthError('You wrote a wrong email address', 500)
+          throw new AuthError('Check email address user not found')
         }
     } catch (error) {
         res.json(error)

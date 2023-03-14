@@ -18,7 +18,7 @@ const Proposal =  db.define('proposals', {
         type:DataTypes.STRING
     }
 });
-db.sync({force: true}) ;
+db.sync() ;
     
 
 module.exports = Proposal
